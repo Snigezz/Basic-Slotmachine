@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Hintergrund-Video -->
+    <div class="video-background">
+        <video id="backgroundVideo" autoplay loop muted>
+            <source src="assets/slotMachineLoop.mp4" type="video/mp4">
+            Dein Browser unterstützt das Videoformat nicht.
+        </video>
+    </div>
+
+    <!-- Navigationsleiste -->
+    <nav>
+        <ul>
+            <li><a href="index.html" id="slotMachineLink">🎰 Slot Machine</a></li>
+            <li><a href="roulette.html" id="rouletteLink">🎲 Roulette</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container für den Inhalt -->
+    <div id="content">
+        <!-- Slot Machine Inhalt -->
+        <div id="slot-machine-content">
+            <!-- Gewinnmöglichkeiten Tabelle -->
+            <div class="win-table">
+                <h2>Gewinnmöglichkeiten</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>5 gleiche</th>
+                            <th>4 gleiche + 1 Wild</th>
+                            <th>3 gleiche + 2 Wild</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>'7'</td>
+                            <td>x50</td>
+                            <td>x40</td>
+                            <td>x30</td>
+                        </tr>
+                        <tr>
+                            <td>'Melone'</td>
+                            <td>x30</td>
+                            <td>x24</td>
+                            <td>x18</td>
+                        </tr>
+                        <tr>
+                            <td>'Bell'</td>
+                            <td>x25</td>
+                            <td>x20</td>
+                            <td>x15</td>
+                        </tr>
+                        <tr>
+                            <td>'Erdbeere'</td>
+                            <td>x20</td>
+                            <td>x16</td>
+                            <td>x12</td>
+                        </tr>
+                        <tr>
+                            <td>'Traube'</td>
+                            <td>x15</td>
+                            <td>x12</td>
+                            <td>x10</td>
+                        </tr>
+                        <tr>
+                            <td>'Orange'</td>
+                            <td>x12</td>
+                            <td>x10</td>
+                            <td>x8</td>
+                        </tr>
+                        <tr>
+                            <td>'Pflaume'</td>
+                            <td>x10</td>
+                            <td>x8</td>
+                            <td>x6</td>
+                        </tr>
+                        <tr>
+                            <td>'Zitrone'</td>
+                            <td>x8</td>
+                            <td>x6</td>
+                            <td>x4</td>
+                        </tr>
+                        <tr>
+                            <td>3 Wild-Symbole</td>
+                            <td>x50</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>5 Wild-Symbole</td>
+                            <td>x100</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Slot-Container mit 5 Slots -->
+            <div class="slot-container">
+                <div class="slot">
+                    <div class="slot-view">
+                        <div class="slot-symbol" id="slot1-top"></div>
+                        <div class="slot-symbol main" id="slot1"></div>
+                        <div class="slot-symbol" id="slot1-bottom"></div>
+                    </div>
+                </div>
+                <div class="slot">
+                    <div class="slot-view">
+                        <div class="slot-symbol" id="slot2-top"></div>
+                        <div class="slot-symbol main" id="slot2"></div>
+                        <div class="slot-symbol" id="slot2-bottom"></div>
+                    </div>
+                </div>
+                <div class="slot">
+                    <div class="slot-view">
+                        <div class="slot-symbol" id="slot3-top"></div>
+                        <div class="slot-symbol main" id="slot3"></div>
+                        <div class="slot-symbol" id="slot3-bottom"></div>
+                    </div>
+                </div>
+                <div class="slot">
+                    <div class="slot-view">
+                        <div class="slot-symbol" id="slot4-top"></div>
+                        <div class="slot-symbol main" id="slot4"></div>
+                        <div class="slot-symbol" id="slot4-bottom"></div>
+                    </div>
+                </div>
+                <div class="slot">
+                    <div class="slot-view">
+                        <div class="slot-symbol" id="slot5-top"></div>
+                        <div class="slot-symbol main" id="slot5"></div>
+                        <div class="slot-symbol" id="slot5-bottom"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Einsatz und Spin Button -->
+            <input type="number" id="betAmount" placeholder="Einsatz">
+            <button id="spinBtn">Drehen</button>
+            <p id="message"></p>
+            <p>Gewinn diese Runde: <span id="winnings">0</span>€</p>
+            <p>Guthaben: <span id="balance">100</span>€</p>
+
+            <!-- Side Menu -->
+            <div class="side-menu">
+                <h2>🛠️ Commands</h2>
+                <button class="menu-btn" id="resetBalance">💰 Geld zurücksetzen</button>
+                <button class="menu-btn" id="addMoney">➕ 100€ hinzufügen</button>
+                <button class="menu-btn" id="removeMoney">➖ 100€ abziehen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+/* Allgemeine Stile */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    overflow-y: auto; /* Scrollen aktivieren */
+}
+
+/* Hintergrund-Video */
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6);
+}
+
+/* Navigation */
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fdd835;
+}
+
+/* Slot Machine Container */
+#slot-machine-content {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+    width: 600px;
+    text-align: center;
+    margin-top: 100px;
+    flex-grow: 1; /* Damit der Inhalt den verfügbaren Platz ausfüllt */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Platz für die Tabelle unten */
+}
+
+h1 {
+    font-size: 28px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Slot Container */
+.slot-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+/* Slot Spalten (enthält 3 sichtbare Symbole) */
+.slot {
+    width: 100px;
+    height: 300px; /* Höher für 3 sichtbare Symbole */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #222;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+/* Slot View für 3 Symbole */
+.slot-view {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+/* Animation für das Runterfallen der Symbole */
+@keyframes fallAnimation {
+    0% {
+        transform: translateY(-100%); /* Beginnt außerhalb des Slots */
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(20%); /* Lässt das Symbol leicht nach unten rutschen */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0); /* Endet an seiner finalen Position */
+        opacity: 1;
+    }
+}
+
+/* Füge die Animation zu den Slot-Symbolen hinzu */
+.slot-symbol {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    animation: fallAnimation 0.25s ease-in-out, border 0.3s ease-in-out; /* Übergang für smooth Animation *//* Animation beim Start */
+}
+
+.slot-symbol.main {
+    transform: scale(1.1); /* Skaliert das Symbol */
+}
+.slot-symbol.stopped {
+    border: 2px solid gold; /* Goldener Rand, der angezeigt wird, wenn das Symbol stoppt */
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(255, 223, 0, 0.7); /* Goldener Schein */
+}
+
+/* Slot-Bilder */
+.slot-symbol img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Buttons */
+button {
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    transform: scale(1.05);
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.side-menu h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+    color: #fdd835;
+}
+
+.menu-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    background: #333;
+    border: 1px solid #555;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.menu-btn:hover {
+    background: #555;
+}
+/* Slot Container */
+.slot-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+/* Slot-Container mit Animation */
+.slot {
+    width: 100px;
+    height: 300px; /* 3 sichtbare Symbole */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #222;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+/* Gewinnmöglichkeiten Tabelle */
+.win-table {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    /* Keine absolute Positionierung, damit sie in den Container passt */
+}
+
+/* Titel der Tabelle */
+.win-table h2 {
+    color: #fdd835;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Tabelle-Stile */
+.win-table table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+.win-table th, .win-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #555;
+}
+
+.win-table th {
+    background-color: #333;
+    font-size: 18px;
+}
+
+.win-table td {
+    background-color: #222;
+    font-size: 16px;
+}
+
+.win-table tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+.win-table tr:hover {
+    background-color: #444;
+}
+
+/* Füge eine kleine Margin-Bottom hinzu, um den Abstand nach unten zu erhöhen */
+#slot-machine-content {
+    margin-bottom: 100px;
+}
