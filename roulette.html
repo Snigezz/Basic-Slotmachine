@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Hintergrund-Video -->
     <div class="video-background">
         <video id="backgroundVideo" autoplay loop muted>
             <source src="assets/casinoLoop.mp4" type="video/mp4">
@@ -16,7 +15,6 @@
         </video>
     </div>
 
-    <!-- Navigationsleiste -->
     <nav>
         <ul>
             <li><a href="index.html" id="slotMachineLink">🎰 Slot Machine</a></li>
@@ -24,15 +22,12 @@
         </ul>
     </nav>
 
-    <!-- Container für den Inhalt -->
     <div id="content">
         <div class="roulette-game" id="roulette-game">
-            <h1>🎰 Roulette 🎰</h1>
+            <h1>Roulette</h1>
     
-            <!-- Guthaben -->
             <p>Guthaben: <span id="balance">100</span>€</p>
     
-            <!-- Auswahl für Setzen auf Farbe -->
             <div class="betting-options">
                 <label for="colorBet">Setze auf Farbe:</label>
                 <select id="colorBet">
@@ -42,22 +37,18 @@
                 </select>
             </div>
     
-            <!-- Eingabefeld für Zahl -->
             <div class="betting-options">
                 <label for="numberBet">Setze auf Zahl:</label>
                 <input type="number" id="numberBet" min="0" max="36" placeholder="0-36">
             </div>
     
-            <!-- Eingabefeld für Einsatzbetrag -->
             <div class="betting-options">
                 <label for="betAmount">Einsatz:</label>
                 <input type="number" id="betAmount" min="1" placeholder="Einsatzbetrag">
             </div>
     
-            <!-- Setze Button -->
             <button id="spinButton">Drehen</button>
     
-            <!-- Ergebnisanzeige -->
             <p id="rouletteResult">Ergebnis: -</p>
             <p id="message"></p>
         </div>
