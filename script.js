@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     const slotSymbols = [
-        "assets/cherry.png",   // 0
-        "assets/lemon.png",    // 1
-        "assets/grapes.png",   // 2
-        "assets/orange.png",   // 3
-        "assets/melon.png",    // 4
-        "assets/7.png",        // 5
-        "assets/bell.png",     // 6
-        "assets/plum.png",     // 7
-        "assets/strawberry.png", // 8
-        "assets/wild.png"      // 9 - Wild-Symbol
+        "assets/cherry.webp",   // 0
+        "assets/lemon.webp",    // 1
+        "assets/grapes.webp",   // 2
+        "assets/orange.webp",   // 3
+        "assets/melon.webp",    // 4
+        "assets/7.webp",        // 5
+        "assets/bell.webp",     // 6
+        "assets/plum.webp",     // 7
+        "assets/strawberry.webp", // 8
+        "assets/wild.webp"      // 9 - Wild-Symbol
     ];
 
     const spinButton = document.getElementById("spinBtn");
